@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карта детства | Гео-ориентированный маркетплейс</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <header class="header">
+                <h1>Карта детства</h1>
+                <p class="subtitle">Сервис подбора образования [Находка + РФ]</p>
+            </header>
+
+            <section class="filters-section">
+                <div class="filter-group">
+                    <label>Город:</label>
+                    <select id="city-select">
+                        <option value="nahodka">Находка</option>
+                        <option value="moscow">Москва</option>
+                        <option value="spb">Санкт-Петербург</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Дата рождения ребенка:</label>
+                    <input type="date" id="birth-date">
+                </div>
+
+                <div class="filter-group">
+                    <label>Направление:</label>
+                    <select id="activity-type">
+                        <option value="all">Все направления</option>
+                        <option value="robot">🤖 Робототехника</option>
+                        <option value="sport">⚽ Спорт</option>
+                        <option value="art">🎨 Творчество</option>
+                    </select>
+                </div>
+
+                <button class="btn-search" onclick="app.handleFilter()">Найти кружки</button>
+            </section>
+
+            <div id="results-list" class="results-container">
+                </div>
+        </aside>
+
+        <main id="map" class="map-view"></main>
+    </div>
+
+    <div id="tv-overlay" class="tv-mode-hidden"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
