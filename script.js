@@ -1,7 +1,4 @@
-/**
- * ГЕО-МАРКЕТПЛЕЙС "КАРТА ДЕТСТВА"
- * Контроллер данных и генератор контента
- */
+/*ГЕО-МАРКЕТПЛЕЙС "КАРТА ДЕТСТВА"*/
 
 const CONFIG = {
     DEFAULT_CITY: 'nahodka',
@@ -29,7 +26,7 @@ const clubNames = {
 // Основной массив данных
 const CLUBS_DATA = [];
 
-// Генерируем 35 карточек для разнообразия (п. 3.2)
+// Создание карточек для разнообразия (п. 3.2)
 for (let i = 1; i <= 35; i++) {
     const types = ["robot", "sport", "art"];
     const type = types[Math.floor(Math.random() * types.length)];
