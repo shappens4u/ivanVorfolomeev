@@ -14,8 +14,6 @@ const CONFIG = {
         { min: 15, max: 17, label: "15–17 лет" }
     ]
 };
-
-// База данных с удобным форматом координат coords: [широта, долгота]
 const PREDEFINED_CLUBS = [
     // --- РОБОТОТЕХНИКА И IT (robot) ---
     { id: 1, name: "РобоЛаб #1", type: "robot", address: "ул. Ленинская, д. 12", price: "4000р/мес", ageRange: [6, 10], coords: [42.811195689598655, 132.86720232604634] },
@@ -155,7 +153,6 @@ class MarketplaceApp {
                 <p style="color: #10b981; font-weight: 600;">💰 ${club.price}</p>
             `;
             
-            // Здесь теперь плавно центрируем карту, передавая готовый массив club.coords
             card.onclick = () => {
                 if (this.map && club.coords) {
                     this.map.setCenter(club.coords, 15, { duration: 500 });
@@ -173,7 +170,6 @@ class MarketplaceApp {
         data.forEach(club => {
             if (!club.coords) return;
 
-            // Передаем массив координат напрямую в конструктор Placemark
             const placemark = new ymaps.Placemark(club.coords, {
                 balloonContent: `<strong>${club.name}</strong><br>${club.address}<br>Цена: ${club.price}`
             }, {
